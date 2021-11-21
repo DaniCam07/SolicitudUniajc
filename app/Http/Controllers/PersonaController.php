@@ -61,7 +61,13 @@ class PersonaController extends Controller
         $personas->correo = $request->get('correo');
         $personas->telefono = $request->get('telefono');
         $personas->save();
-        return Redirect::to('createu');
+        //return Redirect::to('createu');
+        $ultimaP= Persona::latest('id_persona')->first();
+       
+        //dd( $ultimaP);
+  
+        return view('user.create_Usuario', ["ultimaP" => $ultimaP]);
+         //return Redirect::to('register');
     }
 
     /**

@@ -23,7 +23,7 @@ Route::resource('persona', 'PersonaController');
 Route::get('imprimirPersonas','PdfController@imprimirPersonas')->name('imprimirPersonas');
 Route::get('imprimirRegistro/{imprimirRegistro}/{documento}','PdfController@imprimirRegistroP')->name('imprimirRegistro');
 
-Route::resource('createu', 'UserController');
+Route::resource('rusuario', 'UserController');
 Route::resource('createe', 'EstudianteController');
 Route::resource('created', 'RolController');
 Route::resource('creater', 'DirectivoController');
