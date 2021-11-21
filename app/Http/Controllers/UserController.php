@@ -81,7 +81,7 @@ class UserController extends Controller
             'name' => $request->get('name'),
             'email' => $request->get('email'),
             'password' => bcrypt($request->get('password')),
-            'avatar' => $request->get('avatar'),
+            'avatar' => 'default.png',
         ]);
 
         $ultimoU= User::latest('id')->first();
