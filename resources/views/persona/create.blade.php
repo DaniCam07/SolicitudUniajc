@@ -22,7 +22,7 @@
     <div class="col-lg-6 col-md-6 col-sm-6 col-xs-12">
         <div class="form-group">
             <br><label for="nombre">Nombre Completo:</label>
-            <input type="text" name="nombre" id="nombre" class="form-control" placeholder="Nombre Completo">
+            <input type="text" name="nombre" id="nombre" class="form-control" placeholder="Nombre Completo" pattern="[a-zA-Z]+">
 
             <label for="correo">{{ __('Correo eletrónico:') }}</label>
             <input id="correo" type="email" class="form-control @error('email') is-invalid @enderror" name="correo" value="{{ old('email') }}" required autocomplete="email" placeholder="Correo eletrònico">
@@ -49,7 +49,7 @@
         </div>
 
         <label for="numero_doc">Número de documento:</label>
-        <input type="text" name="numero_doc" id="numero_doc" class="form-control" placeholder="Número de documento">
+        <input type="number" name="numero_doc" id="numero_doc" class="form-control" placeholder="Número de documento" pattern="[-]">
     </div>
 
     <div class="col-lg-6 col-md-6 col-sm-6 col-xs-12">
