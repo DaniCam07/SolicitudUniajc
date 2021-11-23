@@ -49,6 +49,8 @@ class UserController extends Controller
             'email' => $request->get('email'),
             'password' => bcrypt($request->get('password')),
             'avatar' => $filename,
+            'tipo_usuario' => $request->get('usuario')
+
 
         ]);
 
