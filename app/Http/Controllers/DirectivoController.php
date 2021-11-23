@@ -17,7 +17,7 @@ class DirectivoController extends Controller
      */
     public function index()
     {
-        $directores=DB::table('directivos as est')
+        $directores=DB::table('directores as est')
         ->join('personas as per','est.id_persona','=','per.id_persona')
         ->select( 'est.id_director','est.profesion','per.tipo_doc','per.numero_doc','per.nombre','per.correo','per.id_persona','per.telefono')
         ->orderBy('est.id_director','DESC')->paginate(5);

@@ -25,7 +25,7 @@
                     <th>Opciones</th>
                 </thead>
                 <tbody>
-                    @foreach($directivos as $persona)
+                    @foreach($directores as $persona)
                     <tr>
                         <td>{{ $persona->id_persona }}</td>
                         <td>{{ $persona->nombre }}</td>
@@ -53,7 +53,7 @@
                 </tbody>
             </table>
         </div>
-        {{$directivos->links()}}
+        {{$directores->links()}}
     </div>
 </div>
 
