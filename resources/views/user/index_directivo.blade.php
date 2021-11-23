@@ -16,23 +16,27 @@
         <div class="table-responsive">
             <table class="table table-striped table-hover">
                 <thead>
-                    <th>Id</th>
-                    <th>Nombre</th>
+                    <th>Id Persona</th>
+                    <th>Id Director</th>
+                    <th>Nombre Completo</th>
                     <th>Tipo de documento</th>
-                    <th>Numeor</th>
-                    <th>Correo</th>
-                    <th>Telefono</th>
+                    <th>Número de Doc</th>
+                    <th>Correo electrónico</th>
+                    <th>Teléfono</th>
+                    <th>Profesión</th>
                     <th>Opciones</th>
                 </thead>
                 <tbody>
                     @foreach($directores as $persona)
                     <tr>
                         <td>{{ $persona->id_persona }}</td>
+                        <td>{{ $persona->id_director }}</td>
                         <td>{{ $persona->nombre }}</td>
                         <td>{{ $persona->tipo_doc }}</td>
                         <td>{{ $persona->numero_doc}}</td>
                         <td>{{ $persona->correo }}</td>
                         <td>{{ $persona->telefono }}</td>
+                        <td>{{ $persona->profesion }}</td>
                         <td>
 
 
