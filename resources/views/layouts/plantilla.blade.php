@@ -194,7 +194,7 @@ desired effect
                   <img src="uploads/avatars/{{ Auth::user()->avatar }}" class="img-circle" alt="User Image">
 
                   <p>
-                    {{ Auth::user()->name }} - {{ Auth::user()->role }}
+                    {{ Auth::user()->name }} - {{ Auth::user()->tipo_usuario }}
                     <small> Creado el: {{ Auth::user()->created_at }}</small>
                   </p>
                 </li>
