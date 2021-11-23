@@ -20,7 +20,7 @@
                     <th>Id Director</th>
                     <th>Nombre Completo</th>
                     <th>Tipo de documento</th>
-                    <th>Número de Doc</th>
+                    <th>Número</th>
                     <th>Correo electrónico</th>
                     <th>Teléfono</th>
                     <th>Profesión</th>
@@ -40,11 +40,11 @@
                         <td>
 
 
-                            <a href="{{URL::action('PersonaController@edit',$persona->id_persona)}}">
+                            <!--<a href="{{URL::action('PersonaController@edit',$persona->id_persona)}}">
                                 <button class="btn btn-primary">Actualizar</button></a>
 
                             <a href="" data-target="#modal-delete-{{$persona->id_persona}}" data-toggle="modal">
-                                <button class="btn btn-danger">Eliminar</button></a>
+                                <button class="btn btn-danger">Eliminar</button></a>-->
 
                             <a href="\imprimirRegistro/{{$persona->id_persona}}/{{$persona->numero_doc}}">
                                 <button class="btn btn-success"><span class="glyphicon glyphicon-downloadalt">
