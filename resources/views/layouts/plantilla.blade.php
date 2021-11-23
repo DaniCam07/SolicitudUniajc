@@ -63,7 +63,7 @@ desired effect
       <!-- Logo -->
       <a href="index2.html" class="logo">
         <!-- mini logo for sidebar mini 50x50 pixels -->
-        <span class="logo-mini"><img src="{{asset('uploads/logo.png')}}" class="img-circle" alt="User Image"></span>
+        <span class="logo-mini"><img src="uploads/avatars/{{ Auth::user()->avatar }}" class="img-circle" alt="User Image"></span>
         <!-- logo for regular state and mobile devices -->
         <span class="logo-lg"><b>Solicitud UNIAJC</b></span>
       </a>
@@ -95,7 +95,7 @@ desired effect
                       <a href="#">
                         <div class="pull-left">
                           <!-- User Image -->
-                          <img src="{{asset('uploads/avatars/default.png')}}" class="img-circle" alt="User Image">
+                          <img src="uploads/avatars/{{Auth::user()->avatar}}" class="img-circle" alt="User Image">
                         </div>
                         <!-- Message title and timestamp -->
                         <h4>
@@ -184,17 +184,17 @@ desired effect
               <!-- Menu Toggle Button -->
               <a href="#" class="dropdown-toggle" data-toggle="dropdown">
                 <!-- The user image in the navbar-->
-                <img src="{{asset('uploads/avatars/default.png')}}" class="user-image" alt="User Image">
+                <img src="uploads/avatars/{{ Auth::user()->avatar }}" class="user-image" alt="User Image">
                 <!-- hidden-xs hides the username on small devices so only the image appears. -->
                 <span class="hidden-xs">{{ Auth::user()->name }}</span>
               </a>
               <ul class="dropdown-menu">
                 <!-- The user image in the menu -->
                 <li class="user-header">
-                  <img src="{{asset('uploads/avatars/default.png')}}" class="img-circle" alt="User Image">
+                  <img src="uploads/avatars/{{ Auth::user()->avatar }}" class="img-circle" alt="User Image">
 
                   <p>
-                    {{ Auth::user()->name }} - Administrador UNIAJC
+                    {{ Auth::user()->name }} - {{ Auth::user()->role }}
                     <small> Creado el: {{ Auth::user()->created_at }}</small>
                   </p>
                 </li>
@@ -248,7 +248,7 @@ desired effect
         <!-- Sidebar user panel (optional) -->
         <div class="user-panel">
           <div class="pull-left image">
-            <img src="{{asset('uploads/avatars/default.png')}}" class="img-circle" alt="User Image">
+            <img src="uploads/avatars/{{ Auth::user()->avatar }}" class="img-circle" alt="User Image">
           </div>
           <div class="pull-left info">
             <p>{{ Auth::user()->name }}</p>
@@ -274,8 +274,8 @@ desired effect
           <li class="header">Menú Principal</li>
           <!-- Optionally, you can add icons to the links -->
           <li class="active"><a href="{{ url('persona')}}"><i class="fa fa-user fa-1x" aria-hidden="true"></i><span>Usuarios</span></a></li>
-         <!--  <li><a href="{{ url('ingresov')}}"><i class="fa fa-car" aria-hidden="true"></i><span>Ingreso Vehículo</span></a></li>
-          <li><a href="{{ url('cita/calendar')}}"><i class="fa fa-calendar-check-o" aria-hidden="true"></i><span>Programar Cita</span></a></li> -->
+         <li><a href="{{ url('restudiante')}}"><i class="fa fa-address-book" aria-hidden="true"></i><span>Estudiantes</span></a></li>
+          <li><a href="{{ url('rdirectivo')}}"><i class="fa fa-university" aria-hidden="true"></i><span>Directores</span></a></li>
           <li class="treeview">
             <a href="#"><i class="fa fa-link"></i> <span>Multilevel</span>
               <span class="pull-right-container">

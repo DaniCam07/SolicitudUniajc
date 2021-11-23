@@ -24,12 +24,13 @@ Route::get('imprimirPersonas','PdfController@imprimirPersonas')->name('imprimirP
 Route::get('imprimirRegistro/{imprimirRegistro}/{documento}','PdfController@imprimirRegistroP')->name('imprimirRegistro');
 
 Route::resource('rusuario', 'UserController');
-Route::resource('createe', 'EstudianteController');
-Route::resource('created', 'RolController');
-Route::resource('creater', 'DirectivoController');
+Route::resource('restudiante', 'EstudianteController');
+Route::resource('creater', 'RolController');
+Route::resource('rdirectivo', 'DirectivoController');
 
-Route::post('/registro', 'Auth\RegisterController@create')->name('register');
-Route::post('/registroe', 'EstudianteController@store')->name('registroe');
+
+//Route::post('/registro', 'Auth\RegisterController@create')->name('register');
+//Route::post('/registroe', 'EstudianteController@store')->name('registroe');
 
 
 Auth::routes();

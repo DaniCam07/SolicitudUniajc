@@ -22,11 +22,11 @@
             <table class="table table-striped table-hover">
                 <thead>
                     <th>Id</th>
-                    <th>Nombre Completo</th>
+                    <th>Nombre</th>
                     <th>Tipo de documento</th>
-                    <th>Número de documento</th>
-                    <th>Correo Eletrónico</th>
-                    <th>Teléfono</th>
+                    <th>Numeor</th>
+                    <th>Correo</th>
+                    <th>Telefono</th>
                     <th>Opciones</th>
                 </thead>
                 <tbody>

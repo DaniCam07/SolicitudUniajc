@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 use App\Persona;
+use App\User;
 use Illuminate\Support\Facades\Redirect;
 
 class PersonaController extends Controller
@@ -61,13 +62,13 @@ class PersonaController extends Controller
         $personas->correo = $request->get('correo');
         $personas->telefono = $request->get('telefono');
         $personas->save();
-        //return Redirect::to('createu');
-        $ultimaP= Persona::latest('id_persona')->first();
-       
-        //dd( $ultimaP);
-  
+
+        $ultimaP = Persona::latest('id_persona')->first();
+
+        // dd( $ultimaP);
+
         return view('user.create_Usuario', ["ultimaP" => $ultimaP]);
-         //return Redirect::to('register');
+        //   return Redirect::to('register');
     }
 
     /**
@@ -122,8 +123,12 @@ class PersonaController extends Controller
      */
     public function destroy($id_persona)
     {
+        $users = user::findOrFail($id_persona);
+        $users->delete();
+
         $personas = Persona::findOrFail($id_persona);
         $personas->delete();
+        
         return Redirect::to('persona');
     }
 }

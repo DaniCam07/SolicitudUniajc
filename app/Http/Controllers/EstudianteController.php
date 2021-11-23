@@ -2,9 +2,11 @@
 
 namespace App\Http\Controllers;
 
-use Illuminate\Http\Request;
-use App\Estudiante;
 use Illuminate\Support\Facades\Redirect;
+use Illuminate\Http\Request;
+use App\Http\Controllers\Controller;
+use App\Estudiante;
+use DB;
 
 class EstudianteController extends Controller
 {
@@ -15,28 +17,26 @@ class EstudianteController extends Controller
      */
 
 
-    public function __construct()
-    {
-        $this->middleware('auth');
-    }
-
     public function index()
     {
-        {
-            return view('user.create_estudiante');
-        }
+        $estudiantes=DB::table('estudiantes as est')
+        ->join('personas as per','est.id_persona','=','per.id_persona')
+        ->select( 'est.id_estudiante','est.grupo','est.jornada','est.programa','est.semestre','per.tipo_doc','per.numero_doc','per.nombre','per.correo','per.id_persona','per.telefono')
+        ->orderBy('est.id_estudiante','DESC')->paginate(5);
+        return view('user.index_estudiante', ["estudiantes" => $estudiantes]);
     
+
+
     }
+
 
     /**
      * Show the form for creating a new resource.
      *
      * @return \Illuminate\Http\Response
      */
-    public function create(Request $request)
+    public function create()
     {
-        $request->user()->authorizeRoles('admin');
-        return view('persona.create_estudiante');
     }
 
     /**
@@ -47,29 +47,31 @@ class EstudianteController extends Controller
      */
     public function store(Request $request)
     {
-        $estudiantes = new Estudiante;
-        $estudiantes->id_persona = $request->get('id_persona');
-        $estudiantes->programa = $request->get('programa');
-        $estudiantes->grupo = $request->get('grupo');
-        $estudiantes->semestre = $request->get('semestre');
-        $estudiantes->jornada = $request->get('jornada');
-        $estudiantes->save();
-        return Redirect::to('creater');
+
+       
+        Estudiante::create([
+
+            'id_persona' => $request->get('id_persona'),
+            'programa' => $request->get('programa'),
+            'grupo' => $request->get('grupo'),
+            'password' => $request->get('password'),
+            'semestre' => $request->get('semestre'),
+            'jornada' => $request->get('jornada'),
+        ]);
+
+       
+
+        // dd( $ultimaP);
+        return Redirect::to('persona');
+
+        //   return Redirect::to('register');
     }
+
+
+
 
     /**
      * Display the specified resource.
-     *
-     * @param  int  $id
-     * @return \Illuminate\Http\Response
-     */
-    public function show($id)
-    {
-        //
-    }
-
-    /**
-     * Show the form for editing the specified resource.
      *
      * @param  int  $id
      * @return \Illuminate\Http\Response

@@ -2,7 +2,10 @@
 
 namespace App\Http\Controllers;
 
+use Illuminate\Support\Facades\Redirect;
 use Illuminate\Http\Request;
+use App\Http\Controllers\Controller;
+use App\Directore;
 
 class DirectivoController extends Controller
 {
@@ -33,8 +36,16 @@ class DirectivoController extends Controller
      * @return \Illuminate\Http\Response
      */
     public function store(Request $request)
-    {
-        //
+    { 
+        Directore::create([
+
+            'id_persona' => $request->get('id_persona'),
+            'profesion' => $request->get('profesion'),
+        ]);
+        // dd( $ultimaP);
+        return Redirect::to('persona');
+
+        //   return Redirect::to('register');
     }
 
     /**
@@ -82,3 +93,4 @@ class DirectivoController extends Controller
         //
     }
 }
+
