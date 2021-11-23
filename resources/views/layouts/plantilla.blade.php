@@ -65,7 +65,7 @@ desired effect
         <!-- mini logo for sidebar mini 50x50 pixels -->
         <span class="logo-mini"><img src="uploads/avatars/{{ Auth::user()->avatar }}" class="img-circle" alt="User Image"></span>
         <!-- logo for regular state and mobile devices -->
-        <span class="logo-lg"><b>Solicitud UNIAJC</b></span>
+        <span class="logo-lg"><b>Solicitudeesss UNIAJC</b></span>
       </a>
 
       <!-- Header Navbar -->
