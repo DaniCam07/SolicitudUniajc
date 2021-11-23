@@ -2,19 +2,14 @@
 @section('contenido')
 <div class="row">
     <div class="col-md-8 col-xs-12">
-        @include('persona.search')
-    </div>
-    <div class="col-md-2">
-        <a href="persona/create" class="pull-right">
-            <button class="btn btn-success">Crear Persona</button>
-        </a>
+       {{--@include('user.search')--}} 
     </div>
 </div>
-<h3>Reporte de Todos Los Usuarios
-    <a href="\imprimirPersonas">
-        <button class="btn btn-success"><span class="glyphicon glyphicon-downloadalt"></span> Generar PDF</button>
-    </a>
-</h3>
+<h3>Reporte de Todos Los Directivos </h3>
+
+<!-- <a href="\imprimirPersonas">
+    <button class="btn btn-success"><span class="glyphicon glyphicon-downloadalt"></span> Generar PDF</button>
+</a> -->
 
 <div class="row">
     <div class="col-md-12 col-xs-12">
@@ -30,7 +25,7 @@
                     <th>Opciones</th>
                 </thead>
                 <tbody>
-                    @foreach($personas as $persona)
+                    @foreach($directivos as $persona)
                     <tr>
                         <td>{{ $persona->id_persona }}</td>
                         <td>{{ $persona->nombre }}</td>
@@ -58,7 +53,7 @@
                 </tbody>
             </table>
         </div>
-        {{$personas->links()}}
+        {{$directivos->links()}}
     </div>
 </div>
 

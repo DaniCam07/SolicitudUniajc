@@ -49,7 +49,7 @@
         </div>
 
         <label for="numero_doc">Número de documento:</label>
-        <input type="number" name="numero_doc" id="numero_doc" class="form-control" placeholder="Número de documento" pattern="[-]">
+        <input type="number" name="numero_doc" id="numero_doc" class="form-control" placeholder="Número de documento" pattern="[0-9]+">
     </div>
 
     <div class="col-lg-6 col-md-6 col-sm-6 col-xs-12">

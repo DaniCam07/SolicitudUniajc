@@ -6,6 +6,7 @@ use Illuminate\Support\Facades\Redirect;
 use Illuminate\Http\Request;
 use App\Http\Controllers\Controller;
 use App\Directore;
+use DB;
 
 class DirectivoController extends Controller
 {
@@ -16,7 +17,11 @@ class DirectivoController extends Controller
      */
     public function index()
     {
-        return view('user.create_Directivo');
+        $directores=DB::table('directivos as est')
+        ->join('personas as per','est.id_persona','=','per.id_persona')
+        ->select( 'est.id_director','est.profesion','per.tipo_doc','per.numero_doc','per.nombre','per.correo','per.id_persona','per.telefono')
+        ->orderBy('est.id_director','DESC')->paginate(5);
+        return view('user.index_directivo', ["directores" => $directores]);
     }
 
     /**
