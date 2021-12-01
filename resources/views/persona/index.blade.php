@@ -1,4 +1,4 @@
-@extends('layouts.plantilla')
+@extends('layouts.plantilla_admin')
 @section('contenido')
 <div class="row">
     <div class="col-md-8 col-xs-12">
@@ -22,7 +22,7 @@
             <table class="table table-striped table-hover">
                 <thead>
                     <th>Id</th>
-                    <th>Nombre Completo</th>
+                    <th>Nombre Completoss</th>
                     <th>Tipo de documento</th>
                     <th>Número de documento</th>
                     <th>Correo Eletrónico</th>

@@ -40,3 +40,7 @@ Route::get('/home', 'HomeController@index')->name('home');
 Route::get('/form', 'ControllerMail@index');
 // ruta al enviar correo
 Route::post('/send', 'ControllerMail@send');
+
+//Rutas de Solicitud
+Route::resource('solicitud', 'SolicitudController');
+Route::get('imprimirSolicitud/{imprimirSolicitud}','PdfController@imprimirSolicitud')->name('imprimirSolicitud');

@@ -194,7 +194,7 @@ desired effect
                   <img src="{{asset('uploads/avatars')}}/{{ Auth::user()->avatar }}" class="img-circle" alt="User Image">
 
                   <p>
-                    {{ Auth::user()->name }} - {{ Auth::user()->roles->first()->description }}
+                    {{ Auth::user()->name }} - {{ Auth::user()->roles->first()->name }}
                     <small> Creado el: {{ Auth::user()->created_at }}</small>
                   </p>
                 </li>
@@ -248,7 +248,7 @@ desired effect
         <!-- Sidebar user panel (optional) -->
         <div class="user-panel">
           <div class="pull-left image">
-            <img src="{{asset('uploads/avatars')}}/{{ Auth::user()->avatar }}" class="img-circle" alt="User Image">
+            <img src="uploads/avatars/{{ Auth::user()->avatar }}" class="img-circle" alt="User Image">
           </div>
           <div class="pull-left info">
             <p>{{ Auth::user()->name }}</p>
@@ -296,7 +296,7 @@ desired effect
       <!-- Content Header (Page header) -->
       <section class="content-header">
         <h1>
-          Solicitud UNIAJC
+          Solicitud UNIAJC  - VISTA ADMINISTRADOR, Bienvenido -  {{ Auth::user()->name }} 
           <small>Proyecto Integrador</small>
         </h1>
        <!--  <ol class="breadcrumb">
