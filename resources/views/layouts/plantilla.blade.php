@@ -194,11 +194,7 @@ desired effect
                   <img src="{{asset('uploads/avatars')}}/{{ Auth::user()->avatar }}" class="img-circle" alt="User Image">
 
                   <p>
-<<<<<<< HEAD
                     {{ Auth::user()->name }} - {{ Auth::user()->roles->first()->description }}
-=======
-                    {{ Auth::user()->name }} - {{ Auth::user()->tipo_usuario }}
->>>>>>> 448ea159950a85a7a7d32c249d88ac44c86aa4db
                     <small> Creado el: {{ Auth::user()->created_at }}</small>
                   </p>
                 </li>
