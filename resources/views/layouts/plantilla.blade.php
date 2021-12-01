@@ -194,7 +194,11 @@ desired effect
                   <img src="{{asset('uploads/avatars')}}/{{ Auth::user()->avatar }}" class="img-circle" alt="User Image">
 
                   <p>
+<<<<<<< HEAD
                     {{ Auth::user()->name }} - {{ Auth::user()->roles->first()->description }}
+=======
+                    {{ Auth::user()->name }} - {{ Auth::user()->tipo_usuario }}
+>>>>>>> 448ea159950a85a7a7d32c249d88ac44c86aa4db
                     <small> Creado el: {{ Auth::user()->created_at }}</small>
                   </p>
                 </li>
@@ -221,7 +225,7 @@ desired effect
                   <div class="pull-right">
                     <a class="btn btn-default btn-flat" href="{{ route('logout') }}" onclick="event.preventDefault();
                                                      document.getElementById('logout-form').submit();">
-                      {{ __('cerrar sesión') }}
+                      {{ __('Cerrar sesión') }}
                     </a>
 
                     <form id="logout-form" action="{{ route('logout') }}" method="POST" class="d-none">
@@ -274,15 +278,17 @@ desired effect
           <li class="header">Menú Principal</li>
           <!-- Optionally, you can add icons to the links -->
           <li class="active"><a href="{{ url('persona')}}"><i class="fa fa-user fa-1x" aria-hidden="true"></i><span>Usuarios</span></a></li>
+          <li><a href="{{ url('restudiante')}}"><i class="fa fa-address-book" aria-hidden="true"></i><span>Estudiantes</span></a></li>
+          <li><a href="{{ url('rdirectivo')}}"><i class="fa fa-university" aria-hidden="true"></i><span>Directores</span></a></li>
           <li class="treeview">
-            <a href="#"><i class="fa fa-link"></i> <span>Multinivel</span>
+            <a href="#"><i class="fa fa-link"></i> <span>Solicitudes</span>
               <span class="pull-right-container">
                 <i class="fa fa-angle-left pull-right"></i>
               </span>
             </a>
             <ul class="treeview-menu">
-            <li><a href="{{ url('restudiante')}}"><i class="fa fa-address-book" aria-hidden="true"></i><span>Estudiantes</span></a></li>
-            <li><a href="{{ url('rdirectivo')}}"><i class="fa fa-university" aria-hidden="true"></i><span>Directores</span></a></li>
+            <li><a href=""><i class="fa fa-file-text" aria-hidden="true"></i><span>Nueva Solicitud</span></a></li>
+            <li><a href=""><i class="fa fa-search" aria-hidden="true"></i><span>Seguimiento Solicitud</span></a></li>
             </ul>
           </li>
         </ul>

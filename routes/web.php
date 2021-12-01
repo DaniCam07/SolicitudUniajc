@@ -27,6 +27,7 @@ Route::resource('rusuario', 'UserController');
 Route::resource('restudiante', 'EstudianteController');
 Route::resource('creater', 'RolController');
 Route::resource('rdirectivo', 'DirectivoController');
+Route::resource('rprograma', 'ProgramaController');
 
 
 //Route::post('/registro', 'Auth\RegisterController@create')->name('register');

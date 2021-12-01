@@ -5,11 +5,10 @@ namespace App\Http\Controllers;
 use Illuminate\Support\Facades\Redirect;
 use Illuminate\Http\Request;
 use App\Http\Controllers\Controller;
-use App\User;
-use App\Role;
-use Image;
+use App\Programa;
+use DB;
 
-class UserController extends Controller
+class ProgramaController extends Controller
 {
     /**
      * Display a listing of the resource.
@@ -18,8 +17,7 @@ class UserController extends Controller
      */
     public function index()
     {
-
-        //return view('user.create_Usuario');
+        //
     }
 
     /**
@@ -40,38 +38,20 @@ class UserController extends Controller
      */
     public function store(Request $request)
     {
-        $avatar = $request->file('avatar');
-        $filename = time() . '.' . $avatar->getClientOriginalExtension();
-        Image::make($avatar)->resize(300, 300)->save( public_path('/uploads/avatars/' . $filename) );
-        $user = User::create([
-            'id_persona' => $request->get('id_persona'),
-            'name' => $request->get('name'),
-            'email' => $request->get('email'),
-            'password' => bcrypt($request->get('password')),
-            'avatar' => $filename,
-            'tipo_usuario' => $request->get('usuario')
+        Programa::create([
 
-
+            'id_director' => $request->get('id_director'),
+            'nombre' => $request->get('nombre'),
+            'facultad' => $request->get('facultad'),
+            'direccion' => $request->get('direccion'),
+            'telefono' => $request->get('telefono'),
+            
         ]);
 
-        $ultimaP = user::latest('id_persona')->first();
 
-        if ($request->get('usuario') == 'Estudiante') {
+        // dd( $ultimaP);
+        return Redirect::to('persona');
 
-            $user->roles()->attach(Role::where('name', 'student')->first());
-            return view('user.create_estudiante', ["ultimaP" => $ultimaP]);
-            
-        } else if ($request->get('usuario') == 'Directivo') {
-
-            $user->roles()->attach(Role::where('name', 'director')->first());
-            return view('user.create_directivo', ["ultimaP" => $ultimaP]);
-            
-        } else {
-
-            $user->roles()->attach(Role::where('name', 'admin')->first());
-            return Redirect::to('persona');
-        }
-       
     }
 
     /**
@@ -105,7 +85,7 @@ class UserController extends Controller
      */
     public function update(Request $request, $id)
     {
-        
+        //
     }
 
     /**
